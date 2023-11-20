@@ -20,9 +20,14 @@ vim.keymap.set('n', '<C-l>', "<C-w>l", { desc = "Window right" })
 vim.keymap.set('n', '<C-j>', "<C-w>j", { desc = "Window down " })
 vim.keymap.set('n', '<C-k>', "<C-w>k", { desc = "Window up   " })
 
--- ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },    ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
--- switch between windows
--- ["<C-h>"] = { "<C-w>h", "Window left " },
--- ["<C-l>"] = { "<C-w>l", "Window right" },
--- ["<C-j>"] = { "<C-w>j", "Window down " },
--- ["<C-k>"] = { "<C-w>k", "Window up   " },
+
+-- TODO: test this
+vim.keymap.set("n", "<leader>tn", function()
+  require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+vim.keymap.set("n", "<leader>tp", function()
+  require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
+
+vim.keymap.set("n", "<leader>tt", '<cmd> TodoTelescope <CR>', { desc = "Previous todo comment" })
