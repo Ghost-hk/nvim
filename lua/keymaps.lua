@@ -20,8 +20,17 @@ vim.keymap.set('n', '<C-l>', "<C-w>l", { desc = "Window right" })
 vim.keymap.set('n', '<C-j>', "<C-w>j", { desc = "Window down " })
 vim.keymap.set('n', '<C-k>', "<C-w>k", { desc = "Window up   " })
 
+vim.keymap.set('n', '<C-h>', "<cmd> TmuxNavigateLeft <CR>", { desc = "Window left  tmux" })
+vim.keymap.set('n', '<C-l>', "<cmd> TmuxNavigateRight<CR>", { desc = "Window right tmux" })
+vim.keymap.set('n', '<C-j>', "<cmd> TmuxNavigateDown <CR>", { desc = "Window down  tmux" })
+vim.keymap.set('n', '<C-k>', "<cmd> TmuxNavigate Up  <CR>", { desc = "Window up    tmux" })
 
--- TODO: test this
+
+--[[ H238 ["<C-h "<cmd> TmuxNavigateLeft <CR>", "window left" }, ]]
+--[[ ["<C-l>"] { "<cmd> TmuxNavigateRight<CR>", "window right" }, ]]
+--[[ ["<C-j>"] { "<cmd> TmuxNavigateDown <CR>", "window down" }, ]]
+--[[ ["<C-k>"] { "<cmd> TmuxNavigate Up  <CR>", "window up" }, ]]
+
 vim.keymap.set("n", "<leader>tn", function()
   require("todo-comments").jump_next()
 end, { desc = "Next todo comment" })
